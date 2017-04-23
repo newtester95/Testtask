@@ -1,0 +1,172 @@
+using System.Collections.Generic;
+using Microsoft.VisualStudio.TestTools.UnitTesting;
+using ClassLibrary4;
+
+namespace UnitTestProject3
+{
+    [TestClass]
+    public class UnitTest1
+    {
+        [TestMethod]
+        public void TestMethod1()
+        {
+            int n = 5;
+            object[] result = Class1.DoCalculate(n);
+                List<int> resultList = (List<int>)result[1];
+                Assert.AreEqual(n, resultList.Count);
+            
+        }
+        [TestMethod]
+        public void TestMethod2()
+        {
+            string n = "asd";
+            object[] result = Class1.DoCalculate(n);
+            Assert.AreEqual(false, (bool)result[0]);
+            
+        }
+        [TestMethod]
+        public void TestMethod3()
+        {
+            int n = 0;
+            object[] result = Class1.DoCalculate(n);
+            List<int> resultList = (List<int>)result[1];
+            Assert.AreEqual(n, resultList.Count);
+
+        }
+        [TestMethod]
+        public void TestMethod4()
+        {
+            int n = 0;
+            object[] result = Class1.DoCalculate(n);
+            List<int> resultList = (List<int>)result[1];
+            Assert.AreEqual(n, resultList.Count);
+        }
+        [TestMethod]
+        public void TestMethod5()
+        {
+            int n = 1;
+            object[] result = Class1.DoCalculate(n);
+            List<int> resultList = (List<int>)result[1];
+            Assert.AreEqual(n, resultList.Count);
+        }
+        [TestMethod]
+        public void TestMethod6()
+        {
+            int n = -6;
+            object[] result = Class1.DoCalculate(n);
+            Assert.AreEqual(false, (bool)result[0]);
+        }
+        [TestMethod]
+        public void TestMethod7()
+        {
+            char n = '*';
+            object[] result = Class1.DoCalculate(n);
+            Assert.AreEqual(false, (bool)result[0]);
+        }
+        [TestMethod]
+        public void TestMethod8()
+        {
+            char n = '%';
+            object[] result = Class1.DoCalculate(n);
+            Assert.AreEqual(false, (bool)result[0]);
+        }
+        [TestMethod]
+        public void TestMethod9()
+        {
+            char n = '=';
+            object[] result = Class1.DoCalculate(n);
+            Assert.AreEqual(false, (bool)result[0]);
+        }
+        [TestMethod]
+        public void TestMethod10()
+        {
+            char n = '+';
+            object[] result = Class1.DoCalculate(n);
+            Assert.AreEqual(false, (bool)result[0]);
+        }
+        [TestMethod]
+        public void TestMethod11()
+        {
+            char n = '-';
+            object[] result = Class1.DoCalculate(n);
+            Assert.AreEqual(false, (bool)result[0]);
+        }
+        [TestMethod]
+        public void TestMethod12()
+        {
+            char n = '&';
+            object[] result = Class1.DoCalculate(n);
+            Assert.AreEqual(false, (bool)result[0]);
+        }
+        [TestMethod]
+        public void TestMethod13()
+        {
+            char n = ')';
+            object[] result = Class1.DoCalculate(n);
+            Assert.AreEqual(false, (bool)result[0]);
+        }
+        [TestMethod]
+        public void TestMethod14()
+        {
+            char n = '/';
+            object[] result = Class1.DoCalculate(n);
+            Assert.AreEqual(false, (bool)result[0]);
+        }
+        [TestMethod]
+        public void TestMethod15()
+        {
+            char n = '>';
+            object[] result = Class1.DoCalculate(n);
+            Assert.AreEqual(false, (bool)result[0]);
+        }
+        [TestMethod]
+        public void TestMethod16()
+        {
+            char n = ']';
+            object[] result = Class1.DoCalculate(n);
+            Assert.AreEqual(false, (bool)result[0]);
+        }
+        [TestMethod]
+        public void TestMethod17()
+        {
+            decimal n = 2.5M;
+            object[] result = Class1.DoCalculate(n);
+            Assert.AreEqual(false, (bool)result[0]);
+        }
+        [TestMethod]
+        public void TestMethod18()
+        {
+            double n = 25.5;
+            object[] result = Class1.DoCalculate(n);
+            Assert.AreEqual(false, (bool)result[0]);
+        }
+        [TestMethod]
+        public void TestMethod19()
+        {
+            bool n = true;
+            object[] result = Class1.DoCalculate(n);
+            Assert.AreEqual(false, (bool)result[0]);
+        }
+        [TestMethod]
+        public void TestMethod20()
+        {
+            int n = 2147483647;
+            object[] result = Class1.DoCalculate(n);
+            List<int> resultList = (List<int>)result[1];
+            Assert.AreEqual(n, resultList.Count);
+        }
+        public void TestMethod21()
+        {
+            int n = 2147483646;
+            object[] result = Class1.DoCalculate(n);
+            List<int> resultList = (List<int>)result[1];
+            Assert.AreEqual(n, resultList.Count);
+        }
+        public void TestMethod22()
+        {
+            long n = 2147483648;
+            object[] result = Class1.DoCalculate(n);
+            Assert.AreEqual(false, (bool)result[0]);
+        }
+    }
+}
