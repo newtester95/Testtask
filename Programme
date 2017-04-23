@@ -1,0 +1,54 @@
+using System;
+using System.Collections.Generic;
+
+namespace ClassLibrary4
+{
+    public class Class1
+    {
+        public static object[] DoCalculate(object inputData)
+        {
+            object[] result = new object[2];
+            List<int> resultList = new List<int>();
+            result[0] = true;
+            result[1] = resultList;
+            try
+            {
+                int count, k, number;
+                k = 2;
+                number = 0;
+                int n = Convert.ToInt32(inputData);
+                while (number < n)
+                {
+                    count = 0;
+                    for (int i = 1; i <= k; i++)
+                    {
+                        if (k % i == 0)
+                        {
+                            count++;
+                        }
+                        if (count > 2)
+                        {
+                            break;
+                        }
+                    }
+                    if (count > 2)
+                    {
+                        k++;
+                        continue;
+                    }
+                    else
+                    {
+                        resultList.Add(k);
+                        number++;
+                        k++;
+                    }
+                }
+            }
+            catch
+            {
+                result[0] = false;
+            }
+            return result;
+        }
+    }
+}
